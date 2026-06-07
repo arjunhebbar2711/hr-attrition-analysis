@@ -87,3 +87,43 @@ as the highest-impact retention interventions."*
    has the lowest attrition. Apply those practices to Sales.
 5. **Flag all overtime employees as high flight-risk** — 
    HR should proactively engage these
+
+---
+
+## Tools Used
+- **SQL** (SQLite via DB Browser) — data extraction and analysis
+- **Power BI** — interactive dashboard and DAX measures
+- **Dataset** — IBM HR Analytics Employee Attrition Dataset 
+  from Kaggle (1,470 employees, 35 columns)
+
+---
+
+## DAX Measures Created
+Employees_Left =
+COUNTROWS(
+FILTER(
+'WA_Fn-UseC_-HR-Employee-Attrition',
+'WA_Fn-UseC_-HR-Employee-Attrition'[Attrition] = "Yes"
+)
+)
+Attrition_Rate =
+DIVIDE([Employees_Left],
+COUNTROWS('WA_Fn-UseC_-HR-Employee-Attrition')) * 100
+
+---
+
+## Files in this Repository
+| File | Description |
+|---|---|
+| `hr_attrition_analysis.sql` | All 5 SQL queries with business analysis |
+| `HR_Attrition_Analysis.pbix` | Power BI dashboard file |
+| `WA_Fn-UseC_-HR-Employee-Attrition.csv` | IBM HR dataset from Kaggle |
+| `hr_dashboard_preview.png` | Dashboard screenshot |
+
+---
+
+## Author
+**Arjun Harish**
+Aspiring Data Analyst | SQL | Power BI | Power Platform
+📧 arjunhebbar2711@gmail.com
+🔗 github.com/arjunhebbar2711
